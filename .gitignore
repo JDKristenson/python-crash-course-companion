@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Django
+*.log
+db.sqlite3
+db.sqlite3-journal
+media/
+
+# Pygame
+*.pyc
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Personal notes
+notes.txt
+scratch/
