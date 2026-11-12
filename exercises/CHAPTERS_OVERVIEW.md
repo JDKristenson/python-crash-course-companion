@@ -1,4 +1,6 @@
-# Python Crash Course - Complete Chapter Guide
+# Python Crash Course - Chapter Index
+
+Companion topic index for _Python Crash Course, Third Edition_ by Eric Matthes. Only chapters 1 and 2 currently have dedicated guides here. Later topics are a learning roadmap, not completed guides or implemented projects.
 
 ## Part I: Basics
 
@@ -85,17 +87,11 @@
 **Key Skills:** django-bootstrap5, static files, deployment
 
 ## Exercise Files
-Each chapter has a detailed exercise guide in this directory with:
-- Learning objectives
-- Key concepts
-- All "Try It Yourself" exercises from the book
-- Quick reference code snippets
-- Practice ideas
-- Common mistakes to avoid
+The present guides are [chapter 1](chapter_01_getting_started.md) and [chapter 2](chapter_02_variables_and_data_types.md). They contain book-related numbered prompts and supplementary notes, not completed personal solutions. No dedicated guides for later chapters are tracked. Preserve the book credit; exact prompt derivation and redistribution permissions have not been independently verified.
 
 ## Working Through the Book
 1. Read the chapter in the book
-2. Open the corresponding exercise guide
-3. Work through exercises in `my_work/part_X/chapters/chapter_XX/`
-4. Check solutions in `book_resources/` if needed
+2. Open an existing guide where available
+3. Create your own local exercise directory under `my_work/` (not currently tracked)
+4. Consult book resources only after independently obtaining and verifying them; the `book_resources` gitlink has no tracked upstream URL
 5. Use the quick reference guides for syntax help

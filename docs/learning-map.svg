@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700" role="img" aria-labelledby="title desc">
+<title id="title">Python Crash Course companion learning map</title>
+<desc id="desc">Present learning material is separate from unresolved book resources and future personal exercises. This is not application architecture.</desc>
+<rect width="1000" height="700" fill="white"/>
+<text x="40" y="54" fill="#1e293b" font-family="Arial, Helvetica, sans-serif" font-size="30">
+<tspan x="40" dy="0">Python Crash Course | Learning scaffold</tspan>
+</text>
+<text x="40" y="94" fill="#1e293b" font-family="Arial, Helvetica, sans-serif" font-size="18">
+<tspan x="40" dy="0">Materials and provenance, not application architecture</tspan>
+</text>
+<rect x="40" y="130" width="440" height="190" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+<rect x="520" y="130" width="440" height="190" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+<rect x="40" y="350" width="440" height="190" fill="#f8fafc" stroke="#1e293b" stroke-width="2" stroke-dasharray="8 6"/>
+<rect x="520" y="350" width="440" height="190" fill="#f8fafc" stroke="#1e293b" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="60" y="170" fill="#1e293b" font-family="Arial, Helvetica, sans-serif" font-size="22">
+<tspan x="60" dy="0">BOOK / REFERENCE</tspan>
+</text>
+<text x="60" y="208" fill="#1e293b" font-family="Arial, Helvetica, sans-serif" font-size="18">
+<tspan x="60" dy="0">Python Crash Course, Third Edition</tspan>
+<tspan x="60" dy="25.2">Eric Matthes</tspan>
+<tspan x="60" dy="25.2">Book-related prompts retain book credit.</tspan>
+<tspan x="60" dy="25.2">No blanket reuse permission asserted.</tspan>
+</text>
+<text x="540" y="170" fill="#1e293b" font-family="Arial, Helvetica, sans-serif" font-size="22">
+<tspan x="540" dy="0">PRESENT IN THIS REPOSITORY</tspan>
+</text>
+<text x="540" y="208" fill="#1e293b" font-family="Arial, Helvetica, sans-serif" font-size="18">
+<tspan x="540" dy="0">Chapter index + guides for chapters 1-2</tspan>
+<tspan x="540" dy="25.2">Syntax reference + Python helpers</tspan>
+<tspan x="540" dy="25.2">Dependency pins, not installed packages</tspan>
+<tspan x="540" dy="25.2">Sandbox is empty; no completed projects.</tspan>
+</text>
+<text x="60" y="390" fill="#1e293b" font-family="Arial, Helvetica, sans-serif" font-size="22">
+<tspan x="60" dy="0">UNRESOLVED RESOURCE</tspan>
+</text>
+<text x="60" y="428" fill="#1e293b" font-family="Arial, Helvetica, sans-serif" font-size="18">
+<tspan x="60" dy="0">book_resources is a pinned gitlink.</tspan>
+<tspan x="60" dy="25.2">No tracked .gitmodules origin URL.</tspan>
+<tspan x="60" dy="25.2">Contents and license not verified.</tspan>
+<tspan x="60" dy="25.2">Do not assume official bundled code.</tspan>
+</text>
+<text x="540" y="390" fill="#1e293b" font-family="Arial, Helvetica, sans-serif" font-size="22">
+<tspan x="540" dy="0">FUTURE PERSONAL WORK</tspan>
+</text>
+<text x="540" y="428" fill="#1e293b" font-family="Arial, Helvetica, sans-serif" font-size="18">
+<tspan x="540" dy="0">Create local exercises under my_work/.</tspan>
+<tspan x="540" dy="25.2">Book projects are goals, not present apps.</tspan>
+<tspan x="540" dy="25.2">Keep personal solutions distinct.</tspan>
+<tspan x="540" dy="25.2">Environment + offline use need verification.</tspan>
+</text>
+<text x="40" y="584" fill="#1e293b" font-family="Arial, Helvetica, sans-serif" font-size="18">
+<tspan x="40" dy="0">Solid: present reference/material. Dashed: unresolved or future work.</tspan>
+</text>
+<text x="40" y="619" fill="#1e293b" font-family="Arial, Helvetica, sans-serif" font-size="17">
+<tspan x="40" dy="0">Credits: Eric Matthes (book); JDKristenson (recorded commits); Warp (recorded co-author).</tspan>
+<tspan x="40" dy="23.799999999999997">Reason AI assistance: documentation clarification and this map. See README for limits.</tspan>
+</text>
+</svg>
