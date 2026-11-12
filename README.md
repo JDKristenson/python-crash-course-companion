@@ -1,332 +1,78 @@
-# Python Crash Course - Offline Learning Companion
+# Python Crash Course Companion
 
-Your complete, self-contained environment for learning Python from the book "Python Crash Course, Third Edition" by Eric Matthes - designed for offline use on your flight!
+A partial learning scaffold for **_Python Crash Course, Third Edition_ by Eric Matthes**. This repository contains chapter notes, a syntax reference and small Python helpers. It is not the book, a complete offline bundle, or a finished game, visualization or web application.
 
-## 🎯 What This Is
+## What a fresh clone contains
 
-This companion provides everything you need to work through Python Crash Course without internet access:
-- ✅ All official book resources and code examples
-- ✅ Complete Python environment with all required packages
-- ✅ Detailed exercise guides for every chapter
-- ✅ Quick reference guides and cheat sheets
-- ✅ Helper scripts for testing your code
-- ✅ Organized workspace for your learning journey
+- [Chapter index](exercises/CHAPTERS_OVERVIEW.md), plus dedicated guides for [chapter 1](exercises/chapter_01_getting_started.md) and [chapter 2](exercises/chapter_02_variables_and_data_types.md). Later chapters are topics in the index, not completed guides.
+- [Python basics cheat sheet](quick_reference/python_basics_cheatsheet.md).
+- [Activation helper](activate_env.sh), [legacy setup diagnostic](verify_setup.py), and [experiment sandbox](quick_test.py). The sandbox's `test_code()` body is currently `pass`; it is not a test suite or evidence of completed exercises.
+- [Pinned dependency list](requirements.txt). Packages and a virtual environment are **not** included.
+- `book_resources`: a Git **gitlink**, pinned at `fa709a0b729b7d8ca5e2880c074b68e971db2fda` in the source snapshot. No `.gitmodules` URL is tracked, so a fresh clone does not supply inspectable book resources. Do not assume recursive submodule initialization can restore them.
+- Tool guidance in [CLAUDE.md](CLAUDE.md) and [WARP.md](WARP.md).
 
-## 🚀 Quick Start (3 Steps)
+There are no tracked student solutions, `my_work/` workspace, Django `manage.py`, game entry point or application build configuration. The book's Alien Invasion, data visualization and Learning Log projects are **future learning goals**, not implemented features here.
 
-### 1. Verify Everything Works
+## Setup from a fresh clone
+
+The following commands are an inferred local workflow, **not a verified installation recipe**. Run them from the repository root on a system with Python and `venv` support. Python 3.12 is a suggested starting point for the recent pinned dependencies; the legacy diagnostic's Python 3.7 message is not a compatibility guarantee. Interpreter/platform compatibility and dependency installation have not been tested for this documentation update.
+
+For the existing notes and basic Python experiments, no third-party packages are required:
+
 ```bash
+python3 -m venv venv
 source venv/bin/activate
-python verify_setup.py
+# Alternatively, after creating venv: source activate_env.sh
+mkdir -p my_work/part_1_basics/chapters/chapter_01
 ```
 
-This checks that all packages are installed and ready to go offline.
+On Windows PowerShell, activate with `venv\Scripts\Activate.ps1` instead of the Bash `source` command. Create your own exercise files in a local chapter directory before running them.
 
-### 2. Activate Your Environment
-```bash
-source activate_env.sh
-```
-
-This activates your Python virtual environment with all the packages you need.
-
-### 3. Start Learning!
-Open `exercises/CHAPTERS_OVERVIEW.md` to see all chapters and begin your journey.
-
-## 📁 Project Structure
-
-```
-python-crash-course-companion/
-├── README.md                    # You are here!
-├── activate_env.sh              # Quick environment activation
-├── verify_setup.py              # Verify setup is complete
-├── quick_test.py                # Sandbox for testing code
-├── requirements.txt             # All installed packages
-│
-├── book_resources/              # Official code from the author
-│   ├── chapter_01/
-│   ├── chapter_02/
-│   └── ...                      # Complete book examples
-│
-├── my_work/                     # YOUR workspace
-│   ├── part_1_basics/
-│   │   └── chapters/
-│   │       ├── chapter_01/      # Work on Chapter 1 here
-│   │       ├── chapter_02/      # Work on Chapter 2 here
-│   │       └── ...
-│   └── part_2_projects/
-│       └── chapters/
-│           ├── chapter_12/      # Game project work
-│           ├── chapter_15/      # Data visualization
-│           └── ...
-│
-├── exercises/                   # Detailed exercise guides
-│   ├── CHAPTERS_OVERVIEW.md     # Complete chapter index
-│   ├── chapter_01_getting_started.md
-│   ├── chapter_02_variables_and_data_types.md
-│   └── ...
-│
-├── quick_reference/             # Cheat sheets
-│   └── python_basics_cheatsheet.md
-│
-└── venv/                        # Python virtual environment
-```
-
-## 📚 How to Use This Companion
-
-### Your Learning Workflow
-
-1. **Read a chapter** in your Python Crash Course book
-2. **Open the exercise guide** in `exercises/chapter_XX_name.md`
-3. **Create your code** in `my_work/part_X/chapters/chapter_XX/`
-4. **Test your code** frequently as you work
-5. **Check solutions** in `book_resources/` if you get stuck
-6. **Use quick reference** guides when you forget syntax
-
-### Running Your Code
-
-#### Method 1: Direct Execution
-```bash
-cd my_work/part_1_basics/chapters/chapter_01/
-python my_program.py
-```
-
-#### Method 2: Interactive Python
-```bash
-python
->>> # Type your code here
->>> print("Hello, World!")
-```
-
-#### Method 3: Quick Test Sandbox
-Edit `quick_test.py` and run:
-```bash
-python quick_test.py
-```
-
-### Testing Your Code
-
-The book uses pytest for testing (Chapter 11 onwards):
-```bash
-pytest your_test_file.py
-```
-
-## 🎓 Learning Path
-
-### Part I: Basics (Chapters 1-11)
-Master Python fundamentals:
-- Variables, data types, strings
-- Lists, tuples, dictionaries
-- Loops and conditionals
-- Functions and classes
-- Files and exception handling
-- Testing your code
-
-### Part II: Projects (Chapters 12-20)
-Build three major projects:
-- **Alien Invasion Game** (Chapters 12-14): Build a complete game with Pygame
-- **Data Visualization** (Chapters 15-17): Create charts and work with APIs
-- **Web Application** (Chapters 18-20): Build a Django web app
-
-## 📖 Exercise Guides
-
-Each exercise guide includes:
-- **Learning Objectives** - What you'll learn
-- **Key Concepts** - Important topics covered
-- **All Exercises** - Every "Try It Yourself" from the book
-- **Quick Reference** - Code snippets for the chapter
-- **Common Mistakes** - What to watch out for
-- **Practice Ideas** - Extra challenges
-
-Find them in: `exercises/`
-
-## 🔍 Quick Reference
-
-Need to remember syntax? Check:
-- `quick_reference/python_basics_cheatsheet.md` - Complete Python reference
-
-Can't remember how to:
-- Loop through a list? → See "Loops" section
-- Read a file? → See "Files" section
-- Create a class? → See "Classes" section
-
-## 🛠 Installed Packages
-
-All packages are pre-installed for offline use:
-
-- **pygame** - Game development (Chapters 12-14)
-- **matplotlib** - Data visualization (Chapters 15-16)
-- **plotly** - Interactive visualizations (Chapter 17)
-- **django** - Web development (Chapters 18-20)
-- **requests** - API calls (Chapters 16-17)
-- **beautifulsoup4** - Web scraping
-- **pytest** - Testing framework (Chapter 11)
-
-Plus all their dependencies!
-
-## 💡 Tips for Learning Offline
-
-### 1. Type Everything Yourself
-Don't copy-paste! Typing code builds muscle memory.
-
-### 2. Experiment Freely
-Change values, add features, break things and fix them.
-
-### 3. Read Error Messages
-They're trying to help! Learn to understand what they're telling you.
-
-### 4. Use the Quick Test Script
-`quick_test.py` is your sandbox - use it to try ideas quickly.
-
-### 5. Check Your Work
-Compare your code with the author's solutions in `book_resources/`
-
-### 6. Take Breaks
-Learning to code takes time. Short, focused sessions work best.
-
-## 🐛 Troubleshooting
-
-### Environment Issues
-
-**Q: Python command not found?**
-```bash
-# Try python3 instead
-python3 --version
-```
-
-**Q: Package import fails?**
-```bash
-# Make sure virtual environment is activated
-source venv/bin/activate
-# Verify packages
-python verify_setup.py
-```
-
-**Q: Permission denied when running scripts?**
-```bash
-chmod +x script_name.sh
-```
-
-### Code Issues
-
-**Q: Syntax Error?**
-- Check for missing colons `:` after if/for/while/def
-- Verify matching quotes and parentheses
-- Check indentation (use 4 spaces per level)
-
-**Q: Name Error?**
-- Check spelling of variable names (case-sensitive!)
-- Make sure you defined the variable before using it
-
-**Q: Index Error?**
-- Remember: lists start at index 0
-- Use `len(list)` to check list length
-
-## 📝 Working Through Chapters
-
-### Suggested Pace
-- **Chapters 1-2**: 30 minutes each
-- **Chapters 3-7**: 1 hour each
-- **Chapters 8-11**: 1-2 hours each
-- **Chapters 12-14**: 2-3 hours each (game project)
-- **Chapters 15-17**: 2 hours each (data viz)
-- **Chapters 18-20**: 3-4 hours each (web app)
-
-### Stay Organized
-Create a new `.py` file for each exercise:
-```bash
-cd my_work/part_1_basics/chapters/chapter_02/
-touch exercise_2_3_personal_message.py
-```
-
-## 🎮 The Projects
-
-### Project 1: Alien Invasion (Pygame)
-A complete Space Invaders-style game with:
-- Ship that moves and shoots
-- Waves of aliens
-- Collision detection
-- Scoring system
-- Increasing difficulty
-
-### Project 2: Data Visualization
-Create beautiful charts showing:
-- Random walks
-- Dice roll statistics
-- Weather data
-- GitHub repository statistics (with sample data)
-
-### Project 3: Learning Log (Django)
-A web application where users can:
-- Log topics they're learning
-- Add entries about each topic
-- Create accounts and log in
-- Keep data private
-
-## 🌟 After Your Flight
-
-When you have internet again:
-- Deploy your Learning Log app
-- Explore APIs with real API keys
-- Share your projects on GitHub
-- Continue learning with Python documentation online
-
-## 📚 Additional Resources in This Package
-
-### Book Resources
-- Complete source code from the book
-- All example programs
-- Solutions to exercises
-
-### Your Workspace
-- Pre-created directories for each chapter
-- Organized by book parts
-- Ready for your code
-
-### Reference Materials
-- Python syntax cheat sheet
-- Common patterns and idioms
-- Error message guide
-
-## 🎯 Goals for Your Flight
-
-By the end of your flight, you could:
-- ✅ Complete Part I (Chapters 1-11) - Python fundamentals
-- ✅ Start one of the three projects
-- ✅ Have a strong foundation in Python programming
-- ✅ Be ready to build your own projects
-
-## 🤝 Happy Learning!
-
-Remember: Every programmer started exactly where you are now. The key is:
-- **Be patient** with yourself
-- **Practice** regularly
-- **Experiment** and have fun
-- **Learn from mistakes** (they're the best teachers!)
-
-You've got everything you need. Now let's learn Python! 🐍
-
----
-
-## Quick Command Reference
+For later book projects, the existing pins include Pygame, Matplotlib, Plotly, Django, Requests, Beautiful Soup and pytest with dependencies. Installation is optional for the basic notes and normally needs network access:
 
 ```bash
-# Activate environment
-source activate_env.sh
-
-# Verify setup
-python verify_setup.py
-
-# Run a Python file
-python my_program.py
-
-# Start Python interactive mode
-python
-
-# Run tests
-pytest test_file.py
-
-# Quick test sandbox
-python quick_test.py
+python -m pip install -r requirements.txt
 ```
 
-Good luck on your Python learning journey! ✈️ 🐍
+No repository build step or application start command exists yet. Do not run Django or game commands until you have actually created the corresponding project.
+
+### Checks and their limits
+
+These are available commands to run locally, **not checks run for this documentation update**:
+
+```bash
+python quick_test.py       # Executes the sandbox; currently does no exercise work
+python verify_setup.py     # Legacy informational diagnostic; see limitations below
+```
+
+`verify_setup.py` is not a reliable pass/fail gate: it ignores package-check return values, checks directory existence rather than book-resource contents, uses an outdated Python-version check, and does not set a failure exit status. A missing `my_work/` or `venv/` is expected before local setup. Even a success message does not prove offline readiness. No runtime behavior is changed by this documentation update.
+
+When you have written actual tests, run `python -m pytest path/to/your_test_file.py` with pytest installed. No dedicated exercise test suite is currently tracked.
+
+## Learning workflow and offline preparation
+
+1. Read the relevant chapter in your own copy of Eric Matthes's book.
+2. Use the two existing guides and syntax reference as supplementary material.
+3. Create your own solutions under `my_work/`; name files by exercise and distinguish personal work from quoted or adapted book material.
+4. Run the files and tests you create. Record what you implemented and checked before presenting it as portfolio work.
+5. Consult book resources only after independently obtaining and verifying their source and applicable terms. The unresolved gitlink is not a working reference bundle.
+
+Offline study requires advance preparation: a working local interpreter, any needed packages, the book and lawfully obtained reference files, plus a rehearsal with networking unavailable. None of that is guaranteed by cloning this repository. Network-dependent exercises need separate data or an online session.
+
+## Provenance, credits and license status
+
+- **Book:** _Python Crash Course, Third Edition_, **Eric Matthes**. The chapter organization and numbered “Try It Yourself” prompts relate to that book; they are not presented as original portfolio exercises authored by this repository. Exact derivation and redistribution permissions of those prompts have not been independently verified.
+- **Repository history:** the two commits through [source snapshot `40c9232`](https://github.com/JDKristenson/python-crash-course-companion/commit/40c9232892323186b505f941fb3e10bbfa1990af) record **JDKristenson** as author/committer. The initial scaffold is dated 2025-11-07; the tool-guidance update is dated 2025-12-24. Commit identity and repository namespace do not establish ownership or original authorship of every file.
+- **AI assistance:** the 2025-12-24 commit explicitly records **Warp** as co-author. Preserve that history. The presence of `CLAUDE.md` documents tool guidance, not proof that Claude authored the repository. This README clarification and the new learning-map documentation were prepared with **Reason AI assistance**.
+- **Upstream resources:** the gitlink's origin and resource license are unresolved; no upstream URL is asserted here.
+- **License status:** no top-level `LICENSE`, `COPYING` or `NOTICE` file was present in the inspected source snapshot. No blanket reuse permission is claimed. Book material, third-party resources and dependencies can have separate rights and terms. Verify permission before copying, redistributing or applying a repository-wide license.
+
+Keep personal notes, local paths, account details and credentials out of shared exercises and screenshots.
+
+## Editable learning map
+
+![Learning scaffold: present files, unresolved reference and future student work](docs/learning-map.svg)
+
+[Editable Excalidraw source](docs/learning-map.excalidraw) · [Preview and editing notes](docs/README.md)
+
+The map describes learning materials and their boundaries, **not runtime application architecture**. Solid boxes are present material; dashed boxes identify unresolved resources or future work.

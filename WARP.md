@@ -1,187 +1,44 @@
 # WARP.md
 
-This file provides guidance to WARP (warp.dev) when working with code in this repository.
+Guidance for WARP when working in this repository.
 
-## Repository Overview
+## Purpose and present scope
 
-This is an offline learning companion for "Python Crash Course, Third Edition" by Eric Matthes. It's a self-contained educational environment designed for learners working through the book without internet access. The repository contains:
-- Official book resources (example code, solutions)
-- Structured workspace for student exercises
-- Exercise guides with detailed instructions
-- Helper scripts for environment management and testing
-- All required Python packages pre-installed
+This is a partial learning companion to _Python Crash Course, Third Edition_ by Eric Matthes, not a self-contained offline environment. See [README.md](README.md) for the authoritative fresh-clone inventory, inferred setup commands, provenance and license-status notes.
 
-## Common Development Commands
+Present: chapter index, chapter 1 and 2 guides, Python cheat sheet, activation helper, legacy diagnostic, empty experiment sandbox and dependency pins. Absent: tracked personal exercises, a preinstalled environment, finished game/visualization/Django projects, or an application build configuration.
 
-### Environment Management
+`book_resources` is a gitlink whose origin is unresolved: no `.gitmodules` URL is tracked. Do not call its unseen contents official, complete or licensed for reuse. Do not guess an upstream URL. `my_work/` is a future local workspace and `venv/` is an ignored local environment, not included packages.
+
+## Suggested local workflow
+
+1. Read the relevant book chapter and one of the existing guides where available.
+2. Create a local virtual environment if needed; README documents Bash and PowerShell activation.
+3. Create your own exercise files under `my_work/part_1_basics/chapters/chapter_XX/` or `my_work/part_2_projects/chapters/chapter_XX/`.
+4. Run the files and tests you wrote. Compare with book resources only after their origin and terms are verified.
+
+Examples, not installation or execution evidence:
+
 ```bash
-# Activate the virtual environment
-source activate_env.sh
-
-# Or manually activate
+python3 -m venv venv
 source venv/bin/activate
-
-# Verify setup is complete
-python verify_setup.py
-
-# Deactivate environment
-deactivate
-```
-
-### Running Code
-```bash
-# Run any Python file directly
-python path/to/file.py
-
-# Quick test sandbox (for experimenting)
+# Or source activate_env.sh after venv exists
+# Optional for later exercises; normally requires network:
+python -m pip install -r requirements.txt
 python quick_test.py
-
-# Interactive Python REPL
-python
+python verify_setup.py
 ```
 
-### Testing
-```bash
-# Run pytest tests (used from Chapter 11 onwards)
-pytest test_file.py
+`quick_test.py` currently runs an empty `pass` body. `verify_setup.py` ignores package-check return values, checks only directory existence, has an outdated version predicate and does not signal failure through process status. Its success output is not proof of readiness. Python 3.7 is not established as compatible with the pins. Installation and offline use require separate verification.
 
-# Run tests with verbose output
-pytest -v test_file.py
+Once real exercise files/tests exist, use `python path/to/your_file.py` or `python -m pytest path/to/your_test_file.py` with pytest installed. Do not offer a repository server, migrations, game entry point or deployment command: none is implemented here.
 
-# Run specific test function
-pytest test_file.py::test_function_name
-```
+## Educational and contribution conventions
 
-### Django Commands (Chapters 18-20)
-```bash
-# Start Django development server
-python manage.py runserver
-
-# Run Django migrations
-python manage.py migrate
-
-# Create superuser
-python manage.py createsuperuser
-
-# Create new Django app
-python manage.py startapp app_name
-```
-
-### Pygame Commands (Chapters 12-14)
-```bash
-# Run Pygame projects directly
-python game_file.py
-```
-
-## Repository Structure
-
-### Key Directories
-- **`my_work/`** - Student workspace, organized by book parts (part_1_basics, part_2_projects)
-  - Create all your code here in the appropriate chapter subdirectories
-  - Structure: `my_work/part_X/chapters/chapter_XX/`
-  
-- **`book_resources/`** - Official code examples from the book (read-only reference)
-  - Organized by chapter (chapter_01/ through chapter_20+)
-  - Contains author's solutions and example code
-  
-- **`exercises/`** - Detailed exercise guides for each chapter
-  - Start here: `CHAPTERS_OVERVIEW.md` provides a complete chapter index
-  - Each guide includes: learning objectives, key concepts, exercises, quick reference, common mistakes
-  
-- **`quick_reference/`** - Cheat sheets and quick syntax guides
-  
-- **`venv/`** - Python virtual environment with all dependencies
-
-### Important Files
-- **`activate_env.sh`** - Quick environment activation script
-- **`verify_setup.py`** - Validates that environment is ready for offline use
-- **`quick_test.py`** - Sandbox for quick code experiments
-- **`requirements.txt`** - All installed packages for the learning path
-
-## Architecture and Design Principles
-
-### Learning-Focused Structure
-This repository follows the book's two-part structure:
-1. **Part I (Chapters 1-11)**: Fundamentals - variables, data structures, functions, classes, files, testing
-2. **Part II (Chapters 12-20)**: Three major projects:
-   - Alien Invasion game (Pygame)
-   - Data Visualization (matplotlib, plotly)
-   - Web Application (Django)
-
-### Workspace Organization
-- Students work in `my_work/` - never modify `book_resources/`
-- Each chapter has a dedicated directory for exercises
-- Naming convention for exercise files: `exercise_X_Y_descriptive_name.py`
-
-### Helper Scripts Philosophy
-- All scripts include error handling and clear user feedback
-- Scripts print formatted output with emojis (✅ ❌) for visual clarity
-- `verify_setup.py` checks Python version, packages, and directory structure
-- `quick_test.py` provides a safe sandbox with exception handling
-
-## Installed Packages and Usage
-
-All packages are pre-installed in the virtual environment:
-- **pygame** (2.6.1) - Game development framework
-- **matplotlib** (3.10.7) - Data visualization and plotting
-- **plotly** (6.4.0) - Interactive visualizations
-- **Django** (5.2.8) - Web framework
-- **requests** (2.32.5) - HTTP library for API calls
-- **beautifulsoup4** (4.14.2) - HTML/XML parsing
-- **pytest** (8.4.2) - Testing framework
-
-## Working with Student Code
-
-### When Creating New Files
-- Place student exercises in appropriate `my_work/part_X/chapters/chapter_XX/` directories
-- Use descriptive filenames that include exercise numbers
-- Follow Python naming conventions (lowercase with underscores)
-
-### When Debugging Student Code
-- Check that virtual environment is activated (look for `(venv)` in prompt)
-- Common beginner issues: indentation, missing colons, unmatched quotes/parentheses
-- Direct students to compare with `book_resources/` solutions when stuck
-- Use `quick_test.py` for isolated testing of problematic code
-
-### When Working with Projects
-- **Game project** (ch 12-14): Files go in `my_work/part_2_projects/chapters/chapter_12/`
-- **Data viz** (ch 15-17): Use matplotlib/plotly from `my_work/part_2_projects/chapters/chapter_15/`
-- **Django project** (ch 18-20): Create Django project in `my_work/part_2_projects/chapters/chapter_18/`
-
-## Code Style Guidelines
-
-This repository follows standard Python conventions appropriate for beginners:
-- 4 spaces for indentation (never tabs)
-- Descriptive variable names (student-friendly)
-- Comments explaining what code does (educational context)
-- Docstrings for functions and modules
-- Follow PEP 8 where appropriate for learning level
-
-## Educational Context
-
-When assisting with code in this repository:
-- Assume the user is a beginner learning Python
-- Explain concepts clearly without jargon when possible
-- Encourage typing code rather than copy-pasting (builds muscle memory)
-- Reference specific chapter content when relevant
-- Point to appropriate exercise guides in `exercises/` directory
-- Suggest checking `book_resources/` for comparison with author's solutions
-
-## Development Workflow
-
-Typical learning workflow:
-1. Read chapter in the book
-2. Open corresponding exercise guide (`exercises/chapter_XX_name.md`)
-3. Create Python files in `my_work/part_X/chapters/chapter_XX/`
-4. Test code frequently with `python filename.py`
-5. Use `quick_test.py` for quick experiments
-6. Compare with solutions in `book_resources/` if needed
-7. Move to next chapter when comfortable
-
-## Environment Notes
-
-- Virtual environment must be activated before running code
-- All dependencies are pre-installed for offline use
-- Python 3.7+ required (verified by `verify_setup.py`)
-- No internet connection needed for learning
-- Django development server runs on default port 8000
+- Explain concepts for beginners; encourage typing and experimenting with personal code.
+- Use four-space indentation, descriptive lowercase filenames and standard Python style.
+- Keep book-derived material, upstream reference and personal contributions distinct.
+- Preserve Eric Matthes's book credit, recorded JDKristenson history and Warp co-author attribution. The existence of a tool guidance file is not evidence of that tool's authorship.
+- Disclose new AI assistance without asserting ownership of older material.
+- No blanket repository license is established. Keep license-status language factual and avoid copying additional book prompts without verified permission.
+- Keep credentials, personal notes and local account details out of shared material.
